@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOC SHIELD</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff ; /* ✅ force override the gradient */
+    }
+
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: #ffffff; /* ✅ ensure no background inherited */
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .hero span {
+      color: #f97316;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-top: 1rem;
+    }
+
+    .button-orange {
+      background-color: #f97316;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      margin: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-orange:hover {
+      background-color: #ea580c;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Digitize <span>verification Process</span><br>with next-gen technology</h1>
+    <p>DocSheild combines AI and blockchain<br>fast, secure, and reliable.</p>
+  
+    <div class="mt-4">
+      <a href="/upload_details" class="button-orange">Upload Details</a>
+      <a href="/verify" class="button-orange">Go Verify</a>
+    </div>
+  </section>
+</body>
+</html>

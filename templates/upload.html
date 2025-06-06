@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='tailwind.min.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+    }
+    .button-orange {
+      background-color: #f97316;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button-orange:hover {
+      background-color: #ea580c;
+    }
+  </style>
+  <title>Upload Data</title>
+</head>
+<body>
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-xl p-10 w-full max-w-xl">
+      <h2 class="text-2xl font-semibold mb-2 text-center">Upload your Document</h2>
+      <p class="text-sm text-gray-500 text-center mb-6">File should be of format .png, .jpg, .jpeg</p>
+      <form id="file-upload-form" action="/upload_data" method="POST" enctype="multipart/form-data" class="w-full">
+        <input type="file" id="file-upload" name="image" class="block w-full text-sm text-gray-500 mb-4" accept=".jpg, .jpeg, .png">
+        <button type="submit" class="button-orange w-full">Upload</button>
+      </form>
+      <div id="progress-container" class="w-full h-4 bg-gray-200 rounded-full mt-4 hidden">
+        <div id="progress-bar" class="bg-orange-600 text-xs font-medium text-white text-center p-0.5 leading-none rounded-full" style="width: 0%;">0%</div>
+      </div>
+      <label id="status" class="hidden mt-4 block text-center text-green-600">✅ Done</label>
+      <label id="transaction" class="block mt-2 text-center text-sm text-gray-700"></label>
+      <div id="response" class="mt-4 text-center text-red-600 text-sm"></div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('file-upload-form');
+    const progressContainer = document.getElementById('progress-container');
+    const progressBar = document.getElementById('progress-bar');
+    const responseDiv = document.getElementById('response');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const button = event.submitter;
+      button.disabled = true;
+      const formData = new FormData(form);
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '/upload_data', true);
+
+      xhr.upload.onprogress = function(e) {
+        if (e.lengthComputable) {
+          const percentComplete = (e.loaded / e.total) * 100;
+          progressContainer.classList.remove('hidden');
+          progressBar.style.width = percentComplete + '%';
+          progressBar.innerText = Math.round(percentComplete) + '%';
+        }
+      };
+
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          document.getElementById('status').classList.remove('hidden');
+          progressContainer.classList.add('hidden');
+          const response = xhr.responseText;
+          document.getElementById('transaction').innerText = "Transaction Hash: " + response;
+        } else {
+          responseDiv.innerText = 'Upload failed. Please try again.';
+        }
+      };
+
+      xhr.onerror = function() {
+        responseDiv.innerText = 'Upload failed. Please try again.';
+      };
+
+      xhr.send(formData);
+    });
+  </script>
+</body>
+</html>
