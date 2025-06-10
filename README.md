@@ -1,1 +1,0 @@
-# Automated-Document-Verification-System-using-AI
