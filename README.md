@@ -35,21 +35,31 @@ This project is a smart, secure, and efficient document verification system that
 git clone https://github.com/varshi-git/Automated-Document-Verification-System-using-AI.git
 cd Automated-Document-Verification-System-using-AI
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/varshi-git/text-editor.git
+2. Setup Virtual Environment:
    
-2. Navigate to the project directory:
+   python -m venv venv
+   source venv/bin/activate        
+  
+3. Install Dependencies:
 
-       cd text-editor
+       pip install -r requirements.txt
    
-3. Compile the Java file:
+4. Set up .env File:
    
-        javac TextEditorr.java
+       GOOGLE_API_KEY=your_google_generative_ai_api_key
 
-4.Run the application:
+5.Run the Flask Server:
 
-        java TextEditorr
+        python app.py
+
+---
+
+## OUTPUT
+
+Home Page
+
+
+
 
 
 
