@@ -29,7 +29,7 @@ This project is a smart, secure, and efficient document verification system that
 
 ## ⚙️ Installation Steps
 
-### 1. Clone the Repository
+1. Clone the Repository
 
 ```bash
 git clone https://github.com/varshi-git/Automated-Document-Verification-System-using-AI.git
