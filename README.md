@@ -35,3 +35,11 @@ This project is a smart, secure, and efficient document verification system that
 git clone https://github.com/varshi-git/Automated-Document-Verification-System-using-AI.git
 cd Automated-Document-Verification-System-using-AI
 
+###2. Setup Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate     # Windows: venv\Scripts\activate
+
+
+
