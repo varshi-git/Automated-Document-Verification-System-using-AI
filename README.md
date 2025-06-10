@@ -35,14 +35,21 @@ This project is a smart, secure, and efficient document verification system that
 git clone https://github.com/varshi-git/Automated-Document-Verification-System-using-AI.git
 cd Automated-Document-Verification-System-using-AI
 
-...
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/varshi-git/text-editor.git
+   
+2. Navigate to the project directory:
 
-### 2. Setup Virtual Environment
+       cd text-editor
+   
+3. Compile the Java file:
+   
+        javac TextEditorr.java
 
-```bash
-python -m venv venv
-source venv/bin/activate         # For Windows: venv\Scripts\activate
+4.Run the application:
 
+        java TextEditorr
 
 
 
