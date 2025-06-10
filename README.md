@@ -37,7 +37,7 @@ cd Automated-Document-Verification-System-using-AI
 
 ---
 
-### 2. Setup Virtual Environment
+2. Setup Virtual Environment
 
 ```bash
 python -m venv venv
