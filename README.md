@@ -40,7 +40,8 @@ cd Automated-Document-Verification-System-using-AI
 
 ```bash
 python -m venv venv
-source venv/bin/activate     # Windows: venv\Scripts\activate
+source venv/bin/activate         # For Windows: venv\Scripts\activate
+
 
 
 
