@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Flask specific
+instance/
+*.pyc
+
+# Environment variables
+.env
+*.env
+
+# macOS
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# SQLite database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# Unit test / pytest
+.pytest_cache/
+nosetests.xml
+test-results/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Compiled HTML/static files (optional)
+staticfiles/
+build/
+dist/
+
+# PyInstaller
+*.spec
+
+# mypy
+.mypy_cache/
+
+# JetBrains (PyCharm, etc.)
+.idea/
